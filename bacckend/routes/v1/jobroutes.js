@@ -1,10 +1,10 @@
 const jobRouter = require("express").Router();
 const {create,listJobs,listMyJobs,adminListJobs,jobDetails,updateJob,adminUpdateJob,suggestJobEdit,reviewJob,deleteJob,adminDeleteJob,
 } = require("../../controllers/jobcontroller");
-const { authClient } = require("../../middleware/authMiddleware");
+const { authClient } = require("../../middleware/authMiddleWare");
 const authAdmin = require("../../middleware/authAdmin");
 const { applyToJob, updateFreelancerApplication, listFreelancerApplications, listClientApplications, updateApplicationStatus, submitWork, shareResumeWithClient, submitClientReview, listFreelancerReviews, listClientReviews } = require("../../controllers/applicationcontroller");
-const { authFreelancer } = require("../../middleware/authMiddleware");
+const { authFreelancer } = require("../../middleware/authMiddleWare");
 
 // applications
 jobRouter.get("/freelancer/applications", authFreelancer, listFreelancerApplications);

@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { list, markRead, markAllRead, deleteAll } = require("../../controllers/notificationcontroller");
 const authAdmin = require("../../middleware/authAdmin");
-const { authClient, authFreelancer } = require("../../middleware/authMiddleware");
+const { authClient, authFreelancer } = require("../../middleware/authMiddleWare");
 
 const scoped = (role, auth) => {
   const scopedRouter = require("express").Router();
