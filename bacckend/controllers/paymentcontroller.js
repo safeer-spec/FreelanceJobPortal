@@ -56,6 +56,9 @@ function makeCheckoutHandler(role, getAccountId, resolvePlan) {
       const stripe = stripeClient();
       const session = await stripe.checkout.sessions.create({
         mode: "subscription",
+        // Keep this app's checkout card-only so saved Link wallet cards don't
+        // replace the fresh card form when customers are testing a payment.
+        allowed_payment_method_types: ["card"],
         line_items: [{
           price_data: {
             currency: "inr",
