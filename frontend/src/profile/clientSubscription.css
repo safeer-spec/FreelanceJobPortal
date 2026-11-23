@@ -1,0 +1,43 @@
+.client-subscription {
+  margin: 0 0 30px;
+  padding: clamp(20px, 3vw, 30px);
+  border: 1px solid #e5dfca;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #fffef9, #fffdf4);
+  box-shadow: 0 10px 28px rgba(80, 68, 34, .06);
+}
+.client-subscription__heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; margin-bottom: 20px; }
+.client-subscription__heading h2 { margin: 0; color: #202938; font-size: 1.4rem; }
+.client-subscription__heading > div > p:last-child { margin: 6px 0 0; color: #657184; }
+.client-subscription__current { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid #d7e5d7; border-radius: 999px; background: #f0f7ed; color: #456344; font-size: .82rem; font-weight: 750; }
+.client-subscription__current span { width: 8px; height: 8px; border-radius: 50%; background: #67a46b; }
+.client-subscription__plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.client-subscription__plan { display: flex; min-width: 0; flex-direction: column; align-items: flex-start; padding: 20px; border: 1px solid #e7e2d4; border-radius: 14px; background: #fff; transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease; }
+.client-subscription__billing { color: #087e73; font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.client-subscription__plan h3 { margin: 8px 0 4px; color: #202938; font-size: 1.15rem; }
+.client-subscription__plan > p { margin: 0 0 16px; color: #657184; }
+.client-subscription__price { margin-top: auto; color: #202938; font-size: 1.65rem; font-weight: 800; letter-spacing: -.03em; }
+.client-subscription__price span { margin-left: 4px; color: #657184; font-size: .82rem; font-weight: 500; letter-spacing: 0; }
+.client-subscription__actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 14px; }
+.client-subscription__view { display: inline-flex; min-height: 40px; align-items: center; gap: 9px; margin-top: 14px; padding: 0 15px; border: 1px solid #d4bd72; border-radius: 9px; background: #fff5d6; color: #665115; font-weight: 750; text-decoration: none; }
+.client-subscription__actions .client-subscription__view { margin-top: 0; }
+.client-subscription__subscribe { display: inline-flex; min-height: 40px; align-items: center; gap: 9px; padding: 0 16px; border: 1px solid #087e73; border-radius: 9px; background: #087e73; color: white; font: inherit; font-weight: 750; text-decoration: none; cursor: pointer; transition: background .18s, transform .18s, box-shadow .18s; }
+.client-subscription__subscribe:hover { transform: translateY(-2px); background: #066d64; box-shadow: 0 7px 15px rgba(8, 126, 115, .18); }
+.client-subscription__subscribe:disabled { cursor: wait; opacity: .72; }
+.client-subscription__subscribe:focus-visible { outline: 3px solid #54bbae; outline-offset: 2px; }
+.client-subscription__view:hover { background: #ffedb5; }
+.client-subscription__view:focus-visible { outline: 3px solid #d5b34d; outline-offset: 2px; }
+.client-subscription__notice { margin: 16px 0 0; padding: 12px 14px; border-radius: 10px; background: #f4f6f3; color: #657184; font-size: .86rem; line-height: 1.5; }
+html[data-theme="dark"] .client-subscription { border-color: #4d4938; background: linear-gradient(135deg, #22231e, #26251e); }
+html[data-theme="dark"] .client-subscription__heading h2,
+html[data-theme="dark"] .client-subscription__plan h3 { color: #f1f3f7; }
+html[data-theme="dark"] .client-subscription__heading > div > p:last-child,
+html[data-theme="dark"] .client-subscription__plan > p,
+html[data-theme="dark"] .client-subscription__price { color: #c0c5cb; }
+html[data-theme="dark"] .client-subscription__price span { color: #b3bdcb; }
+html[data-theme="dark"] .client-subscription__plan { border-color: #46463b; background: #1a1f29; }
+html[data-theme="dark"] .client-subscription__notice { background: #202631; color: #c0c5cb; }
+@media (max-width: 600px) {
+  .client-subscription__heading { flex-direction: column; }
+  .client-subscription__plans { grid-template-columns: 1fr; }
+}

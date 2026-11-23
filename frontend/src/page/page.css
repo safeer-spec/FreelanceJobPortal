@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+  font-family: "DM Sans", Arial, sans-serif;
+  color: #111827;
+
+  --auth-green: #108a00;
+  --auth-green-hover: #0c7300;
+  --auth-border: #d6dce5;
+  --auth-muted: #5b6472;
+  --auth-input: #fff;
+
+  /* Dark theme */
+  --bg: #0a0b1a;
+  --bg-glow-purple: rgba(88, 56, 190, 0.28);
+  --bg-glow-teal: rgba(20, 184, 166, 0.14);
+  --text-light: #e9e7f7;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse at top left, var(--bg-glow-purple), transparent 55%),
+    radial-gradient(ellipse at right center, var(--bg-glow-teal), transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Dark page with centered auth card */
+.signup-page,
+.login-page {
+  position: relative;            /* lets the heading anchor to the page */
+  min-height: 100vh;
+  display: grid;
+  padding: 40px 20px;
+  place-items: center;
+  background: transparent;       /* body's dark theme shows through */
+}
+
+/* Signup and login cards (stay white) */
+.signup-card,
+.login-card {
+  width: 520px;
+  min-height: 600px;
+  padding: 38px 42px;
+  border: 1px solid var(--auth-border);
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: none;
+}
+
+/* Headings: pinned to the top-left of the page */
+.signup-heading,
+.login-heading {
+  position: absolute;
+  top: 28px;
+  left: 32px;
+  margin: 0;
+  color: var(--text-light);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 24px;
+}
+
+/* Signup form */
+.signup-form {
+  display: grid;
+  gap: 16px;
+}
+
+.signup-form label:not(.terms-label) {
+  display: grid;
+  gap: 7px;
+  color: #202938;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.name-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Inputs */
+.signup-form input:not([type="checkbox"]),
+.login-form input {
+  width: 100%;
+  height: 44px;
+  padding: 0 13px;
+  border: 1px solid #cfd6df;
+  border-radius: 10px;
+  outline: none;
+  background: var(--auth-input);
+  color: #17213a;
+  font: inherit;
+  font-size: 14px;
+}
+
+.signup-form input::placeholder,
+.login-form input::placeholder {
+  color: #7b8492;
+}
+
+.signup-form input:not([type="checkbox"]):focus,
+.login-form input:focus {
+  border-color: var(--auth-green);
+  box-shadow: 0 0 0 3px rgb(16 138 0 / 12%);
+}
+
+/* Terms checkbox */
+.terms-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: #3f4855;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.terms-label input {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 15px;
+  margin: 2px 0 0;
+  accent-color: var(--auth-green);
+}
+
+/* Links */
+.signup-form a,
+.password-label-row a,
+.signup-prompt a,
+.signin-prompt a {
+  color: var(--auth-green);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-form a:hover,
+.password-label-row a:hover,
+.signup-prompt a:hover,
+.signin-prompt a:hover {
+  color: var(--auth-green-hover);
+  text-decoration: underline;
+}
+
+/* Primary buttons */
+.signup-form button,
+.login-submit {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--auth-green);
+  border-radius: 999px;
+  background: var(--auth-green);
+  color: #fff;
+  font: 700 14px "DM Sans", sans-serif;
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.signup-form button:hover:not(:disabled),
+.login-submit:hover {
+  transform: translateY(-1px);
+  background: var(--auth-green-hover);
+}
+
+.signup-form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Login form */
+.login-form {
+  display: grid;
+  gap: 10px;
+}
+
+.login-form label {
+  color: #202938;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.login-form input {
+  margin-bottom: 8px;
+}
+
+.password-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.password-label-row a {
+  font-size: 12px;
+}
+
+.login-submit {
+  margin-top: 8px;
+}
+
+/* Divider */
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 22px 0;
+  color: #697386;
+  font-size: 12px;
+}
+
+.login-divider::before,
+.login-divider::after {
+  height: 1px;
+  flex: 1;
+  background: #dfe4eb;
+  content: "";
+}
+
+/* Google button */
+.google-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid #4285f4;
+  border-radius: 999px;
+  background: #4285f4;
+  color: #fff;
+  font: 700 14px "DM Sans", sans-serif;
+  cursor: pointer;
+}
+
+.google-button a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.google-button:hover {
+  background: #3574dc;
+}
+
+.google-mark {
+  color: #fff;
+  font: 700 18px Arial, sans-serif;
+}
+
+/* Optional Apple button */
+.apple-button {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 12px;
+  border: 1px solid #222;
+  border-radius: 999px;
+  background: #fff;
+  color: #111;
+  font: 700 14px "DM Sans", sans-serif;
+  cursor: pointer;
+}
+
+.apple-button:hover {
+  background: #f7f7f7;
+}
+
+/* Prompts beneath forms */
+.signup-prompt,
+.signin-prompt {
+  margin: 28px 0 0;
+  color: var(--auth-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* Keyboard focus */
+.signup-form button:focus-visible,
+.login-submit:focus-visible,
+.google-button:focus-visible,
+.apple-button:focus-visible,
+.signup-form a:focus-visible,
+.password-label-row a:focus-visible,
+.signup-prompt a:focus-visible,
+.signin-prompt a:focus-visible {
+  outline: 3px solid #85c77b;
+  outline-offset: 3px;
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+  .signup-page,
+  .login-page {
+    padding: 70px 14px 20px;     /* room for the pinned heading */
+  }
+
+  .signup-heading,
+  .login-heading {
+    top: 20px;
+    left: 20px;
+    font-size: 20px;
+  }
+
+  .signup-card,
+  .login-card {
+    width: 100%;
+    padding: 28px 22px;
+    border-radius: 18px;
+  }
+
+  .name-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}

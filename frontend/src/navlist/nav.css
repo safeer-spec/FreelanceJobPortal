@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+ --bg: #e8ead8;
+  font-family: Arial, sans-serif;
+}
+
+.nav-content {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 40px 20px;
+  background:
+    radial-gradient(ellipse at 15% 15%, rgba(255, 224, 112, 0.72), transparent 38%),
+    radial-gradient(ellipse at 85% 75%, rgba(255, 190, 55, 0.48), transparent 36%),
+    linear-gradient(135deg, #fff5c2, #f3d875 70%);
+}
+
+.upskill-notes {
+  width: min(100%, 760px);
+  padding: clamp(28px, 5vw, 48px);
+  border: 1px solid rgba(134, 150, 190, 0.25);
+  border-radius: 22px;
+  background: rgba(15, 20, 34, 0.88);
+  color: #f5f3ff;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.upskill-notes h3 {
+  margin: 0 0 18px;
+  color: #f7f4ff;
+  font-size: clamp(28px, 4vw, 38px);
+  line-height: 1.2;
+}
+
+.upskill-notes p {
+  margin: 0 0 24px;
+  color: #c3c9da;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.upskill-notes ul {
+  margin: 0;
+  padding-left: 22px;
+  color: #dce2f1;
+}
+
+.upskill-notes li {
+  margin: 13px 0;
+  padding-left: 5px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.upskill-notes li::marker {
+  color: #20d4d0;
+}
+
+@media (max-width: 600px) {
+  .nav-content {
+    padding: 24px 16px;
+  }
+
+  .upskill-notes p,
+  .upskill-notes li {
+    font-size: 15px;
+  }
+}

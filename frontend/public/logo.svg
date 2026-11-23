@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">upskill.io square logo</title>
+  <desc id="desc">A square logo with an ascending growth mark above the upskill.io wordmark.</desc>
+  <defs>
+    <linearGradient id="growth" x1="166" y1="314" x2="348" y2="146" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#18C6B4"/>
+      <stop offset="1" stop-color="#5B6CFF"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(143 100)">
+    <path d="M26 168V128C26 121.373 31.373 116 38 116H54C60.627 116 66 121.373 66 128V168H26Z" fill="url(#growth)"/>
+    <path d="M82 168V92C82 85.373 87.373 80 94 80H110C116.627 80 122 85.373 122 92V168H82Z" fill="url(#growth)"/>
+    <path d="M138 168V56C138 49.373 143.373 44 150 44H166C172.627 44 178 49.373 178 56V168H138Z" fill="url(#growth)"/>
+    <path d="M28 96L82 65L125 83L181 29" stroke="#172554" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M151 29H181V59" stroke="#172554" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M22 184H184" stroke="#D8E2F0" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <text x="256" y="350" text-anchor="middle" font-family="Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="58" font-weight="750" letter-spacing="-2.5">
+    <tspan fill="#172554">upskill</tspan><tspan fill="#5368F8">.io</tspan>
+  </text>
+</svg>
+

@@ -1,0 +1,74 @@
+.freelancer-resume { display: block; width: 100%; min-height: 0; margin: 0 0 22px; padding: 18px; border: 1px solid #dfe7e7; border-radius: 16px; background: #fff; background-image: none; color: #202938; text-align: left; }
+.freelancer-resume__heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; margin-bottom: 12px; }
+.freelancer-resume__heading h2 { margin: 0; color: #202938; font-size: 1.35rem; }
+.freelancer-resume__heading > div > p:last-child { margin: 6px 0 0; color: #657184; }
+.freelancer-resume__heading > a { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 0 14px; border-radius: 8px; background: #0f766e; color: #fff; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.freelancer-resume__layout { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(220px, .8fr); align-items: stretch; gap: 16px; }
+.freelancer-resume__paper { display: grid; align-content: start; grid-auto-rows: max-content; width: 100%; min-width: 0; min-height: 0; height: auto; gap: 12px; margin: 0; padding: 16px; border: 1px solid #e0e5eb; border-radius: 12px; background: #fff !important; color: #202938 !important; }
+.freelancer-resume__visual { position: relative; display: grid; min-height: 185px; overflow: hidden; place-items: center; border: 1px solid #d9e9e4; border-radius: 12px; background: radial-gradient(circle at 18% 18%, rgba(114, 220, 200, .32), transparent 38%), linear-gradient(145deg, #f0faf5, #e8f1ed); }
+.freelancer-resume__visual-card { position: relative; z-index: 1; width: min(245px, 78%); padding: 12px 14px; border: 1px solid rgba(255,255,255,.85); border-radius: 13px; background: rgba(255,255,255,.88); box-shadow: 0 15px 35px rgba(31, 88, 76, .14); transform: rotate(-2deg); animation: freelancer-profile-float 5s ease-in-out infinite; }
+.freelancer-resume__visual-top { display: flex; gap: 4px; margin-bottom: 10px; }
+.freelancer-resume__visual-top span { width: 5px; height: 5px; border-radius: 50%; background: #9bcac0; }
+.freelancer-resume__visual-person { display: flex; align-items: center; gap: 9px; }
+.freelancer-resume__visual-person > span { display: grid; width: 29px; height: 29px; place-items: center; border-radius: 50%; background: #dff3ee; color: #0f766e; font-size: .8rem; font-weight: 800; }
+.freelancer-resume__visual-person > div { display: grid; flex: 1; gap: 5px; }
+.freelancer-resume__visual-person i { display: block; width: 74%; height: 5px; border-radius: 9px; background: #c9d9d5; }
+.freelancer-resume__visual-person i + i { width: 48%; height: 4px; background: #e0e9e6; }
+.freelancer-resume__visual-rule { height: 1px; margin: 10px 0 8px; background: #e5eeeb; }
+.freelancer-resume__visual-card p { margin: 0 0 7px; color: #168174; font-size: .55rem; font-weight: 800; letter-spacing: .12em; }
+.freelancer-resume__visual-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.freelancer-resume__visual-tags span { padding: 4px 7px; border-radius: 99px; background: #edf7f4; color: #52766e; font-size: .58rem; }
+.freelancer-resume__visual-progress { height: 4px; margin-top: 10px; overflow: hidden; border-radius: 99px; background: #e5efec; }
+.freelancer-resume__visual-progress span { display: block; width: 68%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #13a18e, #72d5bd); }
+.freelancer-resume__visual-spark { position: absolute; z-index: 2; color: #d2a944; animation: freelancer-profile-sparkle 3s ease-in-out infinite; }
+.freelancer-resume__visual-spark--one { top: 20%; left: 14%; font-size: 1.3rem; }
+.freelancer-resume__visual-spark--two { right: 13%; bottom: 20%; color: #168174; font-size: 1rem; animation-delay: 1s; }
+.freelancer-resume__visual-badge { position: absolute; right: 8%; bottom: 11%; z-index: 3; padding: 6px 9px; border: 1px solid #d3e6e0; border-radius: 999px; background: #fff; box-shadow: 0 5px 12px rgba(31, 88, 76, .1); color: #42776d; font-size: .62rem; font-weight: 700; animation: freelancer-profile-float 4s ease-in-out infinite reverse; }
+.freelancer-resume__paper > section { display: block; width: auto; min-height: 0; height: auto; margin: 0; padding: 0; place-items: initial; border: 0; border-radius: 0; background: transparent !important; background-image: none !important; color: inherit !important; text-align: left; }
+.freelancer-resume__identity { display: flex; align-items: center; gap: 14px; padding-bottom: 16px; border-bottom: 1px solid #e0e5eb; }
+.freelancer-resume__photo { display: grid; width: 64px; height: 64px; flex: 0 0 64px; overflow: hidden; place-items: center; border-radius: 50%; background: #e0f2f0; color: #0f766e; font-size: 1.5rem; font-weight: 700; }
+.freelancer-resume__photo img { width: 100%; height: 100%; object-fit: cover; }
+.freelancer-resume__identity h3 { margin: 0; color: #202938; font-size: 1.2rem; }
+.freelancer-resume__identity p { margin: 4px 0 0; color: #657184; overflow-wrap: anywhere; }
+.freelancer-resume__headline { font-weight: 600; }
+.freelancer-resume__paper section h4 { margin: 0 0 8px; color: #0f766e; font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; }
+.freelancer-resume__paper section > p { margin: 0; color: #354154; line-height: 1.6; white-space: pre-wrap; }
+.freelancer-resume__skills { display: flex; flex-wrap: wrap; gap: 7px; }
+.freelancer-resume__skills span { padding: 5px 9px; border-radius: 999px; background: #e8f6f3; color: #17685f; font-size: .8rem; }
+.freelancer-resume__entry { padding: 10px 0; border-top: 1px solid #edf0f2; }
+.freelancer-resume__entry:first-of-type { border-top: 0; }
+.freelancer-resume__entry strong { color: #202938; }
+.freelancer-resume__entry p { margin: 4px 0 0; color: #526174; line-height: 1.5; }
+.freelancer-resume__entry small { color: #657184; }
+.freelancer-resume__links { display: flex; flex-wrap: wrap; gap: 14px; }
+.freelancer-resume__links a { color: #0f766e; font-weight: 700; }
+.freelancer-resume__empty { margin: 0; padding: 12px; border-radius: 9px; background: #f5f7f4; color: #657184; }
+@keyframes freelancer-profile-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -5px; } }
+@keyframes freelancer-profile-sparkle { 0%, 100% { opacity: .55; scale: .9; } 50% { opacity: 1; scale: 1.12; } }
+html[data-theme="dark"] .freelancer-resume { border-color: #384251; background: #1a1f29; }
+html[data-theme="dark"] .freelancer-resume__heading h2,
+html[data-theme="dark"] .freelancer-resume__identity h3,
+html[data-theme="dark"] .freelancer-resume__entry strong { color: #f1f3f7; }
+html[data-theme="dark"] .freelancer-resume__heading > div > p:last-child,
+html[data-theme="dark"] .freelancer-resume__identity p,
+html[data-theme="dark"] .freelancer-resume__entry p,
+html[data-theme="dark"] .freelancer-resume__entry small { color: #b3bdcb; }
+html[data-theme="dark"] .freelancer-resume__paper { border-color: #384251; background: #151920 !important; color: #f1f3f7 !important; }
+html[data-theme="dark"] .freelancer-resume__identity,
+html[data-theme="dark"] .freelancer-resume__entry { border-color: #384251; }
+html[data-theme="dark"] .freelancer-resume__paper section h4 { color: #74d5c7; }
+html[data-theme="dark"] .freelancer-resume__paper section > p { color: #b3bdcb; }
+html[data-theme="dark"] .freelancer-resume__skills span { background: #203633; color: #a4e6d9; }
+html[data-theme="dark"] .freelancer-resume__links a { color: #74d5c7; }
+html[data-theme="dark"] .freelancer-resume__empty { background: #151920; color: #b3bdcb; }
+html[data-theme="dark"] .freelancer-resume__visual { border-color: #34534e; background: radial-gradient(circle at 18% 18%, rgba(49, 209, 181, .16), transparent 38%), linear-gradient(145deg, #1c302e, #202a30); }
+html[data-theme="dark"] .freelancer-resume__visual-card { border-color: #3a4a4c; background: rgba(26, 34, 40, .94); }
+html[data-theme="dark"] .freelancer-resume__visual-person i { background: #607571; }
+html[data-theme="dark"] .freelancer-resume__visual-person i + i,
+html[data-theme="dark"] .freelancer-resume__visual-rule,
+html[data-theme="dark"] .freelancer-resume__visual-progress { background: #3c4b4d; }
+html[data-theme="dark"] .freelancer-resume__visual-tags span { background: #203633; color: #a4e6d9; }
+html[data-theme="dark"] .freelancer-resume__visual-badge { border-color: #3a5651; background: #1a2528; color: #a4e6d9; }
+@media (prefers-reduced-motion: reduce) { .freelancer-resume__visual-card, .freelancer-resume__visual-spark, .freelancer-resume__visual-badge { animation: none; } }
+@media (max-width: 720px) { .freelancer-resume__layout { grid-template-columns: minmax(0, 1fr); } .freelancer-resume__visual { min-height: 170px; } }
+@media (max-width: 540px) { .freelancer-resume { padding: 16px; } .freelancer-resume__heading { align-items: flex-start; flex-direction: column; } .freelancer-resume__paper { padding: 15px; } .freelancer-resume__identity { align-items: flex-start; } }

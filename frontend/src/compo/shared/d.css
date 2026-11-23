@@ -1,0 +1,88 @@
+/* Theme switch */
+.navbar .theme-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex: 0 0 auto;
+  color: var(--muted);
+  cursor: pointer;
+  user-select: none;
+}
+
+.navbar .theme-switch__icon {
+  width: 16px;
+  font-size: 15px;
+  line-height: 1;
+  text-align: center;
+}
+
+.navbar .theme-switch__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.navbar .theme-switch__track {
+  position: relative;
+  display: block;
+  width: 46px;
+  height: 26px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  transition: background 180ms ease, border-color 180ms ease;
+}
+
+.navbar .theme-switch__thumb {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.22);
+  transition: transform 180ms ease;
+}
+
+.navbar .theme-switch__input:checked + .theme-switch__track {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.navbar .theme-switch__input:checked + .theme-switch__track .theme-switch__thumb {
+  transform: translateX(20px);
+}
+
+.navbar .theme-switch__input:focus-visible + .theme-switch__track {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+
+html[data-theme="dark"] .navbar {
+  --bg: #000000;
+  --surface: #292d36;
+  --text: #eef0f5;
+  --muted: #b1b7c4;
+  --line: #373c47;
+  --accent: #c084fc;
+  --accent-soft: rgba(192, 132, 252, 0.16);
+}
+
+.navbar .dropdown,
+.navbar .mega {
+  background: var(--bg);
+}
+
+.navbar .dropdown a,
+.navbar .mega-item,
+.navbar .mega-item span {
+  color: var(--text);
+}
+
+.navbar .dropdown a:hover,
+.navbar .mega-item:hover {
+  background: var(--surface);
+}

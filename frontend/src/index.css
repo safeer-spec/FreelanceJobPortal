@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+:root {
+  color-scheme: light;
+  --app-bg: #e9ecda;
+  --app-text: #202938;
+  --app-border: #d9dfd3;
+  --app-toggle: #0f8a7c;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --app-bg: #111318;
+  --app-text: #f1f3f7;
+  --app-border: #353a45;
+  --app-toggle: #0f8a7c;
+}
+
+
+
+html[data-theme] body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--app-bg) !important;
+  color: var(--app-text) !important;
+  font-family: "DM Sans", Arial, sans-serif;
+}
+
+
+
+html[data-theme] .theme-switch__track {
+  background-color: var(--app-toggle) !important;
+  border-color: var(--app-toggle) !important;
+}
+
+html[data-theme] .theme-switch__thumb {
+  background-color: #ffffff !important;
+}
+
+html[data-theme] input::placeholder,
+html[data-theme] textarea::placeholder {
+  color: #778196 !important;
+}
+
+
+html[data-theme] header,
+html[data-theme] header * {
+  border-color: var(--app-border) !important;
+}
+
+/* Keep page sections within the viewport on phones and tablets. */
+html, body, #root { min-height: 100%; }
+body { overflow-x: clip; }
+img, video, canvas, svg { max-width: 100%; }
+input, select, textarea, button { font: inherit; }
+@media (max-width: 640px) {
+  body { min-width: 320px; }
+}

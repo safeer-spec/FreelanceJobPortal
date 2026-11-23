@@ -1,0 +1,45 @@
+.client-quote {
+  position: relative;
+  display: flex;
+  min-height: 205px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin: 0 0 24px;
+  padding: 28px clamp(22px, 5vw, 58px);
+  overflow: hidden;
+  border: 1px solid #d7e5dc;
+  border-radius: 20px;
+  background: radial-gradient(ellipse at 80% 60%, rgba(21, 144, 126, .12), transparent 42%), linear-gradient(115deg, #f8faf3, #eef5ee 72%, #e6f2ed);
+  box-shadow: 0 14px 34px rgba(35, 66, 58, .07);
+}
+.client-quote__copy { position: relative; z-index: 1; max-width: 690px; animation: client-quote-enter .65s cubic-bezier(.2,.7,.2,1) both; }
+.client-quote__tag { color: #0b8176; font-size: .7rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+.client-quote blockquote { margin: 11px 0 12px; color: #202938; font-size: clamp(1.45rem, 3vw, 2.25rem); font-weight: 650; letter-spacing: -.035em; line-height: 1.2; }
+.client-quote__signature { color: #657184; font-size: .86rem; }
+.client-quote__art { position: relative; display: grid; width: 190px; height: 145px; flex: 0 0 190px; place-items: center; }
+.client-quote__card { position: absolute; display: flex; width: 116px; height: 104px; flex-direction: column; gap: 10px; padding: 15px 13px; border: 1px solid #d7e7df; border-radius: 16px; background: rgba(255,255,255,.92); box-shadow: 0 14px 30px rgba(32, 68, 55, .13); }
+.client-quote__card--back { top: 12px; left: 26px; gap: 11px; background: #dff1ea; transform: rotate(-9deg); animation: client-quote-card-back 5s ease-in-out infinite; }
+.client-quote__card--front { z-index: 1; top: 27px; left: 50px; transform: rotate(5deg); animation: client-quote-card-front 5s ease-in-out infinite; }
+.client-quote__card--front b { color: #233144; font-size: .73rem; }
+.client-quote__card i { display: block; width: 78%; height: 5px; border-radius: 5px; background: #dce6e1; }
+.client-quote__card i:nth-of-type(2) { width: 58%; }
+.client-quote__card em { align-self: flex-start; padding: 4px 7px; border-radius: 6px; background: #e5f6f0; color: #087e73; font-size: .55rem; font-style: normal; font-weight: 750; }
+.client-quote__check { position: absolute; z-index: 2; right: 14px; bottom: 7px; display: grid; width: 34px; height: 34px; place-items: center; border: 3px solid #f0f6f0; border-radius: 50%; background: #0b9383; box-shadow: 0 5px 14px rgba(11, 147, 131, .25); color: white; font-weight: 850; animation: client-quote-check 5s ease-in-out infinite; }
+.client-quote__spark { position: absolute; color: #c18b32; }
+.client-quote__spark--one { top: 8px; left: 12px; font-size: 1.1rem; animation: client-quote-twinkle 2.4s ease-in-out infinite; }
+.client-quote__spark--two { right: 5px; bottom: 14px; color: #168d7e; font-size: .9rem; animation: client-quote-twinkle 3s ease-in-out infinite reverse; }
+.client-quote__dots { position: absolute; right: 28px; bottom: 17px; display: flex; gap: 7px; }
+.client-quote__dots button { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 10px; background: #b8cbc3; cursor: pointer; transition: width .25s, background .25s; }
+.client-quote__dots button[aria-current="true"] { width: 22px; background: #0b8176; }
+@keyframes client-quote-enter { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes client-quote-card-back { 0%,100% { transform: translateY(2px) rotate(-9deg); } 50% { transform: translateY(-6px) rotate(-6deg); } }
+@keyframes client-quote-card-front { 0%,100% { transform: translateY(0) rotate(5deg); } 50% { transform: translateY(-9px) rotate(2deg); } }
+@keyframes client-quote-check { 0%,12%,100% { transform: scale(1); } 6% { transform: scale(1.17); } }
+@keyframes client-quote-twinkle { 0%,100% { opacity: .55; scale: .85; } 50% { opacity: 1; scale: 1.15; } }
+@media (max-width: 620px) { .client-quote { min-height: 195px; padding-right: 22px; } .client-quote__art { width: 96px; height: 110px; flex-basis: 96px; scale: .75; margin-right: -10px; } .client-quote__signature { font-size: .76rem; } }
+@media (prefers-reduced-motion: reduce) { .client-quote *, .client-quote *::before, .client-quote *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } }
+html[data-theme="dark"] .client-quote { border-color: #3f5a55; background: radial-gradient(ellipse at 80% 60%, rgba(21, 144, 126, .14), transparent 42%), linear-gradient(115deg, #202a2d, #202b29 72%, #1d302f); }
+html[data-theme="dark"] .client-quote blockquote { color: #f1f3f7; }
+html[data-theme="dark"] .client-quote__signature { color: #b3bdcb; }
+html[data-theme="dark"] .client-quote__bubble { border-color: #3f5a55; background: #283532; }

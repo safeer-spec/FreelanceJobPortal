@@ -1,0 +1,139 @@
+/* The grid that holds all the cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* One card */
+.card {
+  background: white;
+  color: #1d2a2c;
+  border: 1px solid #d3dad2;
+  border-radius: 12px;
+  overflow: hidden;
+  padding-bottom: 14px;
+}
+
+/* The photo box */
+.card-photo {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 56px;
+  font-weight: bold;
+}
+
+.card h3 {
+  margin: 14px 16px 6px;
+}
+
+.card p {
+  margin: 0 16px;
+  color: #59696b;
+}
+
+/* The data at the bottom of the card */
+.card-data {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 14px 16px 0;
+  padding-top: 12px;
+  border-top: 1px solid #d3dad2;
+  font-size: 14px;
+}
+
+
+/* ===== Shared styles for the Admin, Freelancer and Client pages ===== */
+
+/* The grid that holds all the cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* One card */
+.card {
+  background: white;
+  color: #1d2a2c;
+  border: 1px solid #d3dad2;
+  border-radius: 12px;
+  overflow: hidden;
+  padding-bottom: 14px;
+}
+
+/* The photo box */
+.card-photo {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 56px;
+  font-weight: bold;
+}
+
+.card h3 {
+  margin: 14px 16px 6px;
+}
+
+.card p {
+  margin: 0 16px;
+  color: #59696b;
+}
+
+/* The data at the bottom of the card */
+.card-data {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 14px 16px 0;
+  padding-top: 12px;
+  border-top: 1px solid #d3dad2;
+  font-size: 14px;
+}
+
+/* The button on a card */
+.card-btn {
+  margin: 14px 16px 0;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #0f6b6b;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.card-btn:hover {
+  background: #0b5252;
+}
+
+/* The category buttons (filters) */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.chip {
+  padding: 6px 14px;
+  border: 1px solid #d3dad2;
+  border-radius: 20px;
+  background: white;
+  color: #1d2a2c;
+  cursor: pointer;
+}
+
+.chip.active {
+  background: #0f6b6b;
+  border-color: #0f6b6b;
+  color: white;
+}

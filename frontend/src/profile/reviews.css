@@ -1,0 +1,20 @@
+.account-reviews { display: grid; align-content: start; gap: 14px; height: auto; min-height: 0; margin: 0 0 22px; padding: 18px; border: 1px solid #dfe7e7; border-radius: 16px; background: #fff; }
+.account-reviews__heading { margin: 0; }
+.account-reviews__heading h2 { margin: 0; color: #202938; font-size: 1.35rem; }
+.account-reviews__empty { width: fit-content; max-width: 100%; margin: 0; padding: 12px 14px; border-radius: 10px; background: #f5f7f4; color: #657184; }
+.account-reviews__list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr)); gap: 12px; }
+.account-review { min-width: 0; padding: 15px; border: 1px solid #e0e5eb; border-radius: 12px; }
+.account-review__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.account-review h3 { margin: 0; color: #202938; font-size: 1rem; }
+.account-review__top p { margin: 5px 0 0; color: #657184; font-size: .85rem; }
+.account-review__stars { flex: 0 0 auto; color: #c48712; letter-spacing: .08em; white-space: nowrap; }
+.account-review__comment { margin: 14px 0 8px; color: #354154; line-height: 1.6; white-space: pre-wrap; }
+.account-review small { color: #657184; }
+html[data-theme="dark"] .account-reviews { border-color: #384251; background: #1a1f29; }
+html[data-theme="dark"] .account-reviews__heading h2,
+html[data-theme="dark"] .account-review h3 { color: #f1f3f7; }
+html[data-theme="dark"] .account-review { border-color: #384251; }
+html[data-theme="dark"] .account-reviews__empty { background: #151920; color: #b3bdcb; }
+html[data-theme="dark"] .account-review__top p,
+html[data-theme="dark"] .account-review__comment,
+html[data-theme="dark"] .account-review small { color: #b3bdcb; }
