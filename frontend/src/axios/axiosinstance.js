@@ -1,15 +1,9 @@
-import axios from "axios"
-
-const url = import.meta.env.VITE_BASE_UTL 
-console.log(url  , "baseURL")
-
+import axios from "axios";
+import { API_BASE_URL } from "../services/apiBase.js";
 
 const axiosInstance = axios.create({
-    baseURL : url, 
-    //cookies
-    withCredentials : true
-})
+  baseURL: API_BASE_URL,
+  withCredentials: true,
+});
 
-
-
-export {axiosInstance}
+export { axiosInstance };

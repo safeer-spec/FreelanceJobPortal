@@ -1,6 +1,5 @@
-const API_BASE_URL = (
-  import.meta.env.VITE_BASE_UTL || "http://localhost:8500/api/v1"
-).replace(/\/+$/, "");
+import { API_BASE_URL } from "./apiBase.js";
+
 
 async function paymentRequest(path, options = {}) {
   let response;

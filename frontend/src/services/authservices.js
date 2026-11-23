@@ -1,12 +1,11 @@
+import { API_BASE_URL } from "./apiBase.js";
 const ROLE_PATHS = {
   admin: "/admin",
   client: "/client",
   freelancer: "/freelancer",
 };
 
-const API_BASE_URL = (
-  import.meta.env.VITE_BASE_UTL || "http://localhost:8500/api/v1"
-).replace(/\/+$/, "");
+
 
 async function authRequest(role, action, data) {
   const rolePath = ROLE_PATHS[role];

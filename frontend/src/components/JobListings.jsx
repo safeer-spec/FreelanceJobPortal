@@ -1,3 +1,4 @@
+import { API_BASE_URL as API_BASE } from "../services/apiBase.js";
 import { useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import {
@@ -12,9 +13,7 @@ import "./jobListings.css";
 import { applyToJob, updateMyApplication, deleteAdminJob, deleteClientJob, getMyApplications, reviewJob, suggestJobEdit, updateJob } from "../services/jobservices";
 import { getLikedJobs, jobFavoriteKey, LIKED_JOBS_EVENT, toggleLikedJob } from "../services/likedJobs";
 
-const API_BASE = (
-  import.meta.env.VITE_BASE_UTL || "http://localhost:8500/api/v1"
-).replace(/\/+$/, "");
+
 
 const JOB_ENDPOINTS = {
   public: "/job/list",

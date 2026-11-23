@@ -1,8 +1,7 @@
+import { API_BASE_URL } from "./apiBase.js";
 import { handleUnauthorized } from "./authSession.js";
 
-const API_BASE_URL = (
-  import.meta.env.VITE_BASE_UTL || "http://localhost:8500/api/v1"
-).replace(/\/+$/, "");
+
 
 const ROLE_PATHS = {
   freelancer: "/freelancer/profile",
