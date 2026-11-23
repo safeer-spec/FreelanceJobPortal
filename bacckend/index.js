@@ -8,13 +8,45 @@ const cors = require("cors");
 
 const PORT = process.env.PORT || 8500;
 const app = express();
-app.use(cors({
-  origin: [
-    process.env.FRONTEND_URL || "http://localhost:5173",
-    "https://freelancejobportalfrontend.vercel.app",
-  ],
+const allowedOrigins = new Set([
+  "http://localhost:5173",
+  "https://freelancejobportalfrontend.vercel.app",
+  process.env.FRONTEND_URL,
+].filter(Boolean).map((origin) => origin.replace(/\/+$/, "")));
+const corsOptions = {
+  origin(origin, callback) {
+    if (!origin || allowedOrigins.has(origin.replace(/\/+$/, ""))) return callback(null, true);
+    return callback(null, false);
+  },
   credentials: true,
-}));
+  methods: ["GET", "HEAD", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
+app.options(/.*/, cors(corsOptions));
+
+let databaseConnection;
+async function connectDatabase() {
+  if (mongoose.connection.readyState === 1) return;
+  if (!process.env.MONGO_URL) throw new Error("MONGO_URL is not configured.");
+  if (mongoose.connection.readyState !== 2 || !databaseConnection) {
+    databaseConnection = mongoose.connect(process.env.MONGO_URL, { serverSelectionTimeoutMS: 10000 })
+      .catch((error) => { databaseConnection = null; throw error; });
+  }
+  await databaseConnection;
+}
+
+app.use("/api", async (req, res, next) => {
+  try {
+    await connectDatabase();
+    next();
+  } catch (error) {
+    console.error("Database unavailable for API request:", error.message);
+    res.status(503).json({ message: "The service is temporarily unavailable. Please try again shortly." });
+  }
+});
 
 app.post(
   "/api/v1/payment/webhook",
@@ -26,9 +58,5 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieparser());
 app.use("/api", apiRouter);
 
-mongoose
-  .connect(process.env.MONGO_URL)
-  .then(() => console.log("DB connected successfully"))
-  .catch((error) => console.error("Database connection failed:", error));
-
-app.listen(PORT, () => console.log("Server running on " + PORT));
+module.exports = app;
+if (!process.env.VERCEL) app.listen(PORT, () => console.log("Server running on " + PORT));
