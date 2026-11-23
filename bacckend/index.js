@@ -27,6 +27,13 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.options(/.*/, cors(corsOptions));
 
+app.get("/health", (_req, res) => {
+  res.json({
+    server: "ok",
+    database: mongoose.connection.readyState === 1 ? "connected" : "disconnected",
+  });
+});
+
 let databaseConnection;
 async function connectDatabase() {
   if (mongoose.connection.readyState === 1) return;
@@ -59,4 +66,11 @@ app.use(cookieparser());
 app.use("/api", apiRouter);
 
 module.exports = app;
-if (!process.env.VERCEL) app.listen(PORT, () => console.log("Server running on " + PORT));
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log("Server running on " + PORT);
+    connectDatabase()
+      .then(() => console.log("MongoDB connected"))
+      .catch((error) => console.error("MongoDB connection failed:", error.message));
+  });
+}

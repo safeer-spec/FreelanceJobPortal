@@ -80,7 +80,22 @@ export default function LocationAccess() {
 
   return (
     <div className="navbar-location">
-      <button type="button" className="navbar-location__button" onClick={requestLocation} disabled={loading} title={title} aria-label={title}>
+      <button
+        type="button"
+        className="navbar-location__button"
+        onClick={() => {
+          if (location) {
+            setError("");
+            setDetailsOpen((open) => !open);
+          } else {
+            requestLocation();
+          }
+        }}
+        disabled={loading}
+        title={location ? `Show location: ${location.shortName}` : title}
+        aria-label={location ? `Show current location: ${location.shortName}` : "Use your current location"}
+        aria-expanded={detailsOpen}
+      >
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></svg>
         <span>{label}</span>
       </button>
@@ -89,7 +104,7 @@ export default function LocationAccess() {
         <div className="navbar-location__result" role="status">
           <button type="button" className="navbar-location__close" aria-label="Close location details" onClick={() => setDetailsOpen(false)}>×</button>
           <strong>Your current location</strong>
-          {location.displayName && <p>{location.displayName}</p>}
+          <p>{location.shortName || location.displayName || "Location available"}</p>
           <small>Coordinates: {location.latitude.toFixed(6)}, {location.longitude.toFixed(6)}</small>
           <a href={mapUrl} target="_blank" rel="noreferrer">Open on map</a>
           <small className="navbar-location__attribution">Address data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap contributors</a></small>

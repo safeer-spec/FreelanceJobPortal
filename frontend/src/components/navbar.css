@@ -1,4 +1,4 @@
-﻿/* Variables are scoped to .navbar so they don't clash with your app */
+/* Variables are scoped to .navbar so they don't clash with your app */
 .navbar {
   --bg:#e9ecda;
 
@@ -671,10 +671,10 @@ html[data-theme="dark"] .navbar {
   .navbar .nav-right { gap: 3px; }
   .navbar-language { gap: 3px; min-height: 32px; padding-inline: 6px; }
   .navbar-language select { max-width: 74px; font-size: .72rem; }
-  .navbar .theme-switch { gap: 3px; }
+  .navbar .nav-right .theme-switch { gap: 3px; }
   .navbar .theme-switch__icon { width: 13px; font-size: 13px; }
   .navbar .theme-switch__track { width: 40px; height: 24px; }
-  .navbar .theme-switch__input:checked + .theme-switch__track .theme-switch__thumb { transform: translateX(14px); }
+  .navbar .nav-right .theme-switch__input:checked + .theme-switch__track .theme-switch__thumb { transform: translateX(14px); }
   .navbar .nav-links a, .navbar .why-btn { padding-inline: 7px; }
 }
 
@@ -700,3 +700,93 @@ html[data-theme="dark"] .navbar {
 .navbar .dropdown .profile-notifications-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .navbar .profile-notification-count { display: inline-grid; place-items: center; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 999px; background: #0f766e; color: #fff; font-size: .7rem; font-weight: 800; }
 
+
+/* Compact, left anchored navigation on phones. */
+@media (max-width: 600px) {
+  .navbar .logo { order: 0; margin-right: auto; }
+  .navbar .logo img { width: 56px; height: 38px; }
+  .navbar .nav-right { order: 1; flex: 0 0 auto; gap: 4px; margin-left: 0; }
+  .navbar-language { gap: 4px; min-height: 32px; padding-inline: 6px; }
+  .navbar-language svg { width: 14px; height: 14px; flex-basis: 14px; }
+  .navbar-language select { max-width: 68px; padding: 0; font-size: .7rem; }
+  .navbar .nav-right .theme-switch { gap: 3px; }
+  .navbar .nav-right .theme-switch__icon { width: 13px; font-size: 12px; }
+  .navbar .nav-right .theme-switch__track { width: 38px; height: 22px; padding: 2px; }
+  .navbar .nav-right .theme-switch__thumb { width: 16px; height: 16px; }
+  .navbar .nav-right .theme-switch__input:checked + .theme-switch__track .theme-switch__thumb { transform: translateX(14px); }
+  .navbar .profile-btn { width: 32px; height: 32px; }
+}
+
+@media (max-width: 380px) {
+  .navbar { padding-inline: 8px; }
+  .navbar .logo img { width: 48px; height: 34px; }
+  .navbar .nav-right { gap: 2px; }
+  .navbar-language { gap: 3px; padding-inline: 4px; }
+  .navbar-language select { max-width: 54px; font-size: .66rem; }
+  .navbar .nav-right .theme-switch { gap: 2px; }
+  .navbar .nav-right .theme-switch__track { width: 34px; }
+  .navbar .nav-right .theme-switch__input:checked + .theme-switch__track .theme-switch__thumb { transform: translateX(10px); }
+  .navbar .profile-btn { width: 30px; height: 30px; }
+}
+/* Keep the primary link beside the logo on phone widths. */
+@media (max-width: 600px) {
+  .navbar .logo { margin-right: 0; }
+  .navbar .nav-links {
+    order: 1;
+    flex: 0 0 auto;
+    width: auto;
+    gap: 0;
+    border-top: 0;
+    padding-top: 0;
+  }
+  .navbar .why-btn {
+    gap: 4px;
+    padding: 5px 4px;
+    font-size: .78rem;
+    white-space: nowrap;
+  }
+  .navbar .nav-right { order: 2; margin-left: auto; }
+}
+
+@media (max-width: 380px) {
+  .navbar { gap: 4px; }
+  .navbar .logo img { width: 44px; height: 32px; }
+  .navbar .why-btn { gap: 3px; padding-inline: 2px; font-size: .7rem; }
+  .navbar .nav-right { flex: 1 0 100%; justify-content: flex-end; margin-left: 0; }
+}
+@media (max-width: 600px) {
+  .navbar .navbar-location__button { gap: 4px; padding: 5px 7px; font-size: .72rem; }
+  .navbar .navbar-location__button svg { width: 15px; height: 15px; }
+  .navbar .navbar-location__button span { max-width: 118px; }
+}
+
+@media (max-width: 380px) {
+  .navbar .navbar-location__button { gap: 3px; padding: 4px 5px; font-size: .66rem; }
+  .navbar .navbar-location__button span { max-width: 88px; }
+}
+@media (max-width: 600px) {
+  .navbar .navbar-location__button {
+    display: inline-grid;
+    width: 32px;
+    height: 32px;
+    place-items: center;
+    padding: 0;
+    border-radius: 50%;
+  }
+  .navbar .navbar-location__button span { display: none; }
+}
+@media (max-width: 380px) {
+  .navbar .navbar-location__button { width: 30px; height: 30px; }
+}
+/* Show the location label only inside its popup at every screen size. */
+.navbar .navbar-location__button {
+  display: inline-grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  padding: 0;
+  border-radius: 50%;
+}
+.navbar .navbar-location__button span { display: none; }
+.navbar .navbar-location__button svg { width: 18px; height: 18px; }
+.navbar .navbar-location__result p { font-size: .95rem; font-weight: 650; }

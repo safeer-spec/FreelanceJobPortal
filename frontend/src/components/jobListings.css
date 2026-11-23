@@ -416,35 +416,6 @@ html[data-theme="dark"] .job-listings__error {
   .job-listings__heading h1 { overflow-wrap: anywhere; }
 }
 
-/* Keep job cards in one horizontal browsing row at every viewport width. */
-.job-listings__grid {
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(270px, calc((100% - 36px) / 3));
-  grid-template-columns: none !important;
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
-  padding: 2px 2px 12px;
-  scroll-snap-type: inline proximity;
-}
-
-.job-listings__grid > .listing-card,
-.job-listings__grid > .job-listings__empty {
-  scroll-snap-align: start;
-}
-
-@media (min-width: 641px) and (max-width: 900px) {
-  .job-listings__grid {
-    grid-auto-columns: minmax(270px, calc((100% - 18px) / 2));
-  }
-}
-
-@media (max-width: 640px) {
-  .job-listings__grid {
-    grid-auto-columns: minmax(260px, 84vw);
-  }
-}
-
-
 html[data-theme="light"] .job-listings {
   background: #e9ecda;
 }

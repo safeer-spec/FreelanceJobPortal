@@ -1,4 +1,4 @@
-﻿import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./navbar.css";
 import Darkmode from "../compo/shared/Darkmode.jsx";
@@ -199,23 +199,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      <label htmlFor="navbar-1-toggle" className="btn btn-ghost lg:hidden">
-        <svg
-          aria-label="Menu"
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M4 6h16M4 12h8m-8 6h16"
-          />
-        </svg>
-      </label>
       <div className="nav-right navbar-end gap-5">
         <Darkmode />
         <label className="navbar-language" title={t("Language")}>
