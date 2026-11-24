@@ -243,6 +243,15 @@ export default function Navbar() {
             )}
           </button>
           <div className={"dropdown " + (menuOpen ? "open" : "")} role="menu">
+            <div className="mobile-profile-shortcuts">
+              {profile?.role !== "admin" && profile?.role !== "client" && (
+                <Link to="/liked" role="menuitem" className="profile-menu-link mobile-liked-link" onClick={() => setMenuOpen(false)}>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" /></svg>
+                  {t("Liked")}
+                </Link>
+              )}
+              <div className="mobile-location-link"><LocationAccess /></div>
+            </div>
             {profile ? (
               <>
                 <div className="who">
