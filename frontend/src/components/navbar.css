@@ -790,3 +790,73 @@ html[data-theme="dark"] .navbar {
 .navbar .navbar-location__button span { display: none; }
 .navbar .navbar-location__button svg { width: 18px; height: 18px; }
 .navbar .navbar-location__result p { font-size: .95rem; font-weight: 650; }
+/* Phone navigation: keep the brand and main link on one row, controls below. */
+@media (max-width: 600px) {
+  .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px 10px;
+    height: auto;
+    min-height: 0;
+    padding: 8px 12px;
+  }
+
+  .navbar .logo { order: 0; flex: 0 0 auto; margin: 0; }
+  .navbar .logo img { display: block; width: 56px; height: 38px; }
+  .navbar .nav-links {
+    order: 1;
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;
+    gap: 0;
+    padding: 0;
+    border: 0;
+  }
+  .navbar .why-btn {
+    gap: 4px;
+    padding: 8px 6px;
+    font-size: .88rem;
+    white-space: nowrap;
+  }
+  .navbar .nav-right {
+    order: 2;
+    display: flex;
+    flex: 1 0 100%;
+    justify-content: flex-end;
+    align-items: center;
+    gap: clamp(8px, 3vw, 16px);
+    margin: 0;
+    padding-top: 6px;
+    border-top: 1px solid var(--line);
+  }
+  .navbar .search { min-width: 0; }
+  .navbar .search input { width: min(28vw, 110px); }
+  .navbar .search input:focus { width: min(38vw, 140px); }
+  .navbar .liked-btn,
+  .navbar-location__button { padding: 7px; }
+  .navbar .liked-btn span,
+  .navbar-location__button span { display: none; }
+  .navbar .profile-btn { width: 34px; height: 34px; }
+  .navbar .mega {
+    left: 8px;
+    width: calc(100vw - 16px);
+    max-height: calc(100dvh - 130px);
+    overflow-y: auto;
+  }
+  .navbar .mega-main { grid-template-columns: 1fr; gap: 14px; padding: 20px 18px; }
+  .navbar .mega-grid { grid-template-columns: 1fr; gap: 10px; }
+  .navbar .dropdown { max-width: calc(100vw - 24px); }
+}
+
+@media (max-width: 380px) {
+  .navbar { padding-inline: 8px; }
+  .navbar .logo img { width: 48px; height: 34px; }
+  .navbar .nav-right { gap: 8px; }
+  .navbar-language { gap: 4px; min-height: 32px; padding-inline: 6px; }
+  .navbar-language select { max-width: 72px; font-size: .72rem; }
+  .navbar .nav-right .theme-switch { gap: 3px; }
+  .navbar .nav-right .theme-switch__track { width: 38px; height: 22px; }
+  .navbar .nav-right .theme-switch__input:checked + .theme-switch__track .theme-switch__thumb { transform: translateX(14px); }
+}
